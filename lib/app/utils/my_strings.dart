@@ -73,3 +73,5 @@ const String success='success';
 const String invalidTicket='Ticket Invalid';
 const String validForOne='Ticket valid for one-time';
 const String myShift='My Shift';
+const String ok='Ok';
+const String cancel='Cancel';

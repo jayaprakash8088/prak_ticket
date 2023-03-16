@@ -52,13 +52,13 @@ class AppConfig {
           onTap: (){
             Navigator.pop(context,true);
           },
-          child: const Text('Ok'),
+          child:  const Text(ok),
         ),
         GestureDetector(
           onTap: (){
             Navigator.pop(context,false);
           },
-          child:  const Text('Cancel'),
+          child:  const Text(cancel),
         )
       ],
     );
