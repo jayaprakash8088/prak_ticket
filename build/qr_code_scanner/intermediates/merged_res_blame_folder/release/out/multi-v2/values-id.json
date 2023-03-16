@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-id\\values-id.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\ae14bbd1decb94e9619a1567a90fe9ed\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-id\\values-id.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,293",
+                        "endColumns": "58,46,131,108",
+                        "endOffsets": "109,156,288,397"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\values-id\\values-id.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\ae14bbd1decb94e9619a1567a90fe9ed\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-id\\values-id.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,293",
+                        "endColumns": "58,46,131,108",
+                        "endOffsets": "109,156,288,397"
+                    }
+                }
+            ]
+        }
+    ]
+}

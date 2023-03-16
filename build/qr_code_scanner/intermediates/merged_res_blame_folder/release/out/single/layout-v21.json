@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\c2e0152cd2b29898722f6c8002ec9dab\\transformed\\core-1.7.0\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\c2e0152cd2b29898722f6c8002ec9dab\\transformed\\core-1.7.0\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\c2e0152cd2b29898722f6c8002ec9dab\\transformed\\core-1.7.0\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\c2e0152cd2b29898722f6c8002ec9dab\\transformed\\core-1.7.0\\res\\layout-v21\\notification_template_icon_group.xml"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\animator\\fragment_open_exit.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\d0e6567c482ae23998aaf36d625b0bbe\\transformed\\fragment-1.3.6\\res\\animator\\fragment_open_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\animator\\fragment_close_exit.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\d0e6567c482ae23998aaf36d625b0bbe\\transformed\\fragment-1.3.6\\res\\animator\\fragment_close_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\animator\\fragment_close_enter.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\d0e6567c482ae23998aaf36d625b0bbe\\transformed\\fragment-1.3.6\\res\\animator\\fragment_close_enter.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\animator\\fragment_fade_enter.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\d0e6567c482ae23998aaf36d625b0bbe\\transformed\\fragment-1.3.6\\res\\animator\\fragment_fade_enter.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\animator\\fragment_fade_exit.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\d0e6567c482ae23998aaf36d625b0bbe\\transformed\\fragment-1.3.6\\res\\animator\\fragment_fade_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\animator\\fragment_open_enter.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\d0e6567c482ae23998aaf36d625b0bbe\\transformed\\fragment-1.3.6\\res\\animator\\fragment_open_enter.xml"
+    }
+]

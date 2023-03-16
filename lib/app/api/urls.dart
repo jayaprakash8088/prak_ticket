@@ -1,0 +1,9 @@
+const String baseUrl='http://173.247.237.103';
+const String accountRegister='/Account/Register';
+const String accountLogin='/Account/Login';
+const String getTicketInfo='/api/Ticket/GetTicketInfo';
+const String saveTicketInfo='/api/Ticket/SaveTicketInfo';
+const String getEmployeeDetails='/api/User/GetEmployeeDetails?empId=';
+const String submitDailyLoginDetails='/api/User/SubmitDailyLoginDetails';
+const String verifyQrCode='/api/Ticket/VerifyQrCode?ticketId=';
+const String getVenueDetails='/api/Venue/GetVenueDetails';

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\36748e4882b95df12db5c5ea6f2b06ad\\transformed\\appcompat-1.4.2\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\36748e4882b95df12db5c5ea6f2b06ad\\transformed\\appcompat-1.4.2\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\c2e0152cd2b29898722f6c8002ec9dab\\transformed\\core-1.7.0\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\drawable-v21\\abc_list_divider_material.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\36748e4882b95df12db5c5ea6f2b06ad\\transformed\\appcompat-1.4.2\\res\\drawable-v21\\abc_list_divider_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\36748e4882b95df12db5c5ea6f2b06ad\\transformed\\appcompat-1.4.2\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\jayap\\projects\\park_proj_indu\\park_proj\\build\\qr_code_scanner\\intermediates\\merged_res\\release\\drawable-v21\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\jayap\\.gradle\\caches\\transforms-3\\36748e4882b95df12db5c5ea6f2b06ad\\transformed\\appcompat-1.4.2\\res\\drawable-v21\\abc_dialog_material_background.xml"
+    }
+]
