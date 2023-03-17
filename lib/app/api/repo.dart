@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:park_proj/app/api/api_client.dart';
 import 'package:park_proj/app/api/urls.dart';
@@ -5,6 +7,7 @@ import 'package:park_proj/app/models/login_response_model.dart';
 import 'package:park_proj/app/models/save_ticket_info.dart';
 import 'package:park_proj/app/models/save_ticket_response_model.dart';
 import 'package:park_proj/app/models/scan_response_model.dart';
+import 'package:park_proj/app/models/venue_response_details.dart';
 import '../models/emp_details_response_model.dart';
 
 class Repository{
@@ -12,7 +15,11 @@ class Repository{
   Future<dynamic>loginUser(dynamic formData)async{
     try{
       dynamic response=await _apiClient.dioPost(accountLogin, formData);
-      return LoginResponseModel.fromJson(response);
+     if(response!=null){
+       return LoginResponseModel.fromJson(response);
+     }else{
+       return null;
+     }
     }catch(e){
       debugPrint(e.toString());
     }

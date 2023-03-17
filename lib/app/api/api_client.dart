@@ -1,20 +1,15 @@
-import 'dart:convert';
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:park_proj/app/api/urls.dart';
 import 'package:park_proj/app/utils/my_strings.dart';
-
+import 'package:http/http.dart'as http;
 class ApiClient {
-  Dio dio = Dio();
 //post
   Future dioPost(String url, dynamic formData) async {
     try {
-      dio.options.baseUrl = baseUrl;
-      dio.options.headers = <String, dynamic>{contentType: appJson};
-      final response = await dio.post(url, data: formData);
+      final response = await http.post(Uri.parse(baseUrl+url),body: formData,
+      headers: {contentType: appJson});
       if (response.statusCode == 200) {
-        return response.data;
+        return response.body;
       } else {
         return null;
       }
@@ -25,12 +20,11 @@ class ApiClient {
 
   Future dioPostWithToken(String url, dynamic formData, String token) async {
     try {
-      dio.options.baseUrl = baseUrl;
-      dio.options.headers = <String, dynamic>{
+      dynamic response = await http.post(Uri.parse(baseUrl+url), body: formData,
+      headers: {
         contentType: appJson,
         authorization: bearer + token
-      };
-      dynamic response = await dio.post(url, data: formData);
+      });
       if (response!=null&&response.statusCode == 200) {
         return response.data;
       } else {
@@ -44,14 +38,12 @@ class ApiClient {
   // no body
   Future dioPostWithTokenNoBody(String url, String token) async {
     try {
-      dio.options.baseUrl = baseUrl;
-      dio.options.headers = <String, dynamic>{
+      final response = await http.post(Uri.parse(baseUrl+url),headers: {
         contentType: appJson,
         authorization: bearer + token
-      };
-      final response = await dio.post(url);
+      });
       if (response.statusCode == 200) {
-        return response.data;
+        return response.body;
       } else {
         return null;
       }
@@ -62,12 +54,13 @@ class ApiClient {
 
   // get
   Future dioGet(String url) async {
+    Map<String,String> header={
+      'Content-Type': 'application/json',
+    };
     try {
-      dio.options.baseUrl = baseUrl;
-      dio.options.headers = <String, dynamic>{contentType: appJson};
-      final response = await dio.get(url);
-      if (response.statusCode == 200) {
-        return response.data;
+      final response1=await http.get(Uri.parse(baseUrl+url),headers: header);
+      if (response1.statusCode == 200) {
+        return response1.body;
       } else {
         return null;
       }
@@ -78,14 +71,12 @@ class ApiClient {
 
   Future dioGetWithToken(String url, String token) async {
     try {
-      dio.options.baseUrl = baseUrl;
-      dio.options.headers = <String, dynamic>{
+      final response = await http.get(Uri.parse(baseUrl+url),headers: {
         contentType: appJson,
         authorization: bearer + token
-      };
-      final response = await dio.get(url);
+      });
       if (response.statusCode == 200) {
-        return response.data;
+        return response.body;
       } else {
         return null;
       }
