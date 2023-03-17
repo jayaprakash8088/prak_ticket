@@ -99,7 +99,7 @@ class LoginViewModel with ChangeNotifier {
     String token = await AppSharedPref().getToken();
     try {
       dynamic response = await _repository.saveEmpDetails(data, token);
-      if (response != null) {
+      if (response != null&&response) {
         await AppSharedPref().saveShift(shiftVal);
         return true;
       } else {

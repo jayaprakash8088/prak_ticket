@@ -3,6 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:park_proj/app/models/save_ticket_info.dart';
+import 'package:park_proj/app/models/save_ticket_response_model.dart';
 import 'package:park_proj/app/utils/my_strings.dart';
 import '../api/repo.dart';
 import '../api/urls.dart';
@@ -217,8 +218,9 @@ class HomePageViewModel with ChangeNotifier {
   }
 
   SaveTicketInfo? saveTicketInfo;
-  // List<SaveTicketInfoResponseModel> ticketInfoResponseModelList=[];
+  SaveTicketInfoResponseModel? ticketInfoResponseModel;
   List<TicketType> tickets=[];
+  String ticketId='';
   Future saveTicket()async{
     tickets=[];
     var venueValue=await AppSharedPref().getVenue();
@@ -231,9 +233,9 @@ class HomePageViewModel with ChangeNotifier {
       paymentType: cashClicked?cash:card,
       totalAmount: totalVal,totalQuantity: totalQuantity,
       ticketTypes:tickets );
-      dynamic response=await callSaveTicketApi();
-     if(response!=null){
-       await doLoop(response);
+      ticketInfoResponseModel=await callSaveTicketApi();
+     if(ticketInfoResponseModel!=null){
+       ticketId=ticketInfoResponseModel!.ticketId??'';
        return true;
      }else{return false;}
     }catch(e){debugPrint(e.toString());}
@@ -340,13 +342,6 @@ clearValues(){
           rateTypeName: response[i]['rateTypeName']));
     }
   }
- String ticketId='';
-  doLoop(response) {
-    for(int i=0;i<response.length;i++){
-      ticketId=response[0]['ticketId'];
-    }
-  }
-
   dynamic printDoc(BuildContext ctx)async{
     String value=await AppSharedPref().getVenueVal();
     final doc = pw.Document();

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:park_proj/app/api/urls.dart';
 import 'package:park_proj/app/utils/my_strings.dart';
@@ -6,7 +8,7 @@ class ApiClient {
 //post
   Future dioPost(String url, dynamic formData) async {
     try {
-      final response = await http.post(Uri.parse(baseUrl+url),body: formData,
+      final response = await http.post(Uri.parse(baseUrl+url),body: jsonEncode(formData),
       headers: {contentType: appJson});
       if (response.statusCode == 200) {
         return response.body;
@@ -20,13 +22,13 @@ class ApiClient {
 
   Future dioPostWithToken(String url, dynamic formData, String token) async {
     try {
-      dynamic response = await http.post(Uri.parse(baseUrl+url), body: formData,
+      dynamic response = await http.post(Uri.parse(baseUrl+url), body:  jsonEncode(formData),
       headers: {
         contentType: appJson,
         authorization: bearer + token
       });
       if (response!=null&&response.statusCode == 200) {
-        return response.data;
+        return response.body;
       } else {
         return null;
       }
