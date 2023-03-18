@@ -353,18 +353,6 @@ clearValues(){
     await Printing.layoutPdf(
         onLayout: (PdfPageFormat format) async => doc.save());
   }
-  GlobalKey globalKey = GlobalKey();
-  Uint8List? pngBytes;
-  Future<void> captureAndSharePng() async {
-    try {
-      RenderRepaintBoundary ? boundary = globalKey.currentContext!.findRenderObject() as RenderRepaintBoundary;
-      var image = await boundary.toImage();
-      ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
-       pngBytes = byteData!.buffer.asUint8List();
-    } catch(e) {
-      debugPrint(e.toString());
-    }
-  }
   @override
   void dispose() {
     super.dispose();
