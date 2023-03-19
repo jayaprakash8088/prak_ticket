@@ -35,6 +35,7 @@ MERGED from [:flutter_plugin_android_lifecycle] C:\Users\jayap\projects\park_pro
 MERGED from [:fluttertoast] C:\Users\jayap\projects\park_proj_indu\park_proj\build\fluttertoast\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:qr_code_scanner] C:\Users\jayap\projects\park_proj_indu\park_proj\build\qr_code_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [:printing] C:\Users\jayap\projects\park_proj_indu\park_proj\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
+MERGED from [:flutter_image_compress] C:\Users\jayap\projects\park_proj_indu\park_proj\build\flutter_image_compress\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat:1.4.2] C:\Users\jayap\.gradle\caches\transforms-3\36748e4882b95df12db5c5ea6f2b06ad\transformed\appcompat-1.4.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\jayap\.gradle\caches\transforms-3\d0e6567c482ae23998aaf36d625b0bbe\transformed\fragment-1.3.6\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.6.1] C:\Users\jayap\.gradle\caches\transforms-3\08557026302b214505669704ff545a23\transformed\jetified-activity-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -54,6 +55,7 @@ MERGED from [androidx.customview:customview:1.0.0] C:\Users\jayap\.gradle\caches
 MERGED from [androidx.core:core-ktx:1.2.0] C:\Users\jayap\.gradle\caches\transforms-3\342930502aa171c800074254f853c731\transformed\jetified-core-ktx-1.2.0\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.core:core:1.8.0] C:\Users\jayap\.gradle\caches\transforms-3\121145fa3516925652bb7ce86a53ffd1\transformed\core-1.8.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\jayap\.gradle\caches\transforms-3\11e97971fabc820ff2d595758808fb55\transformed\exifinterface-1.3.3\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.heifwriter:heifwriter:1.0.0] C:\Users\jayap\.gradle\caches\transforms-3\4e3cb4aab606eeb9d0d6c980838b5f26\transformed\heifwriter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\jayap\.gradle\caches\transforms-3\febbde735dfcdc80300aa3a3d10823ff\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:17:1-37:12
 MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\jayap\.gradle\caches\transforms-3\dbedb9a6c5e43dbc29f497d410eaf520\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\jayap\.gradle\caches\transforms-3\8f057249bf5082db0173a3db92a12cff\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
@@ -120,6 +122,8 @@ MERGED from [:qr_code_scanner] C:\Users\jayap\projects\park_proj_indu\park_proj\
 MERGED from [:qr_code_scanner] C:\Users\jayap\projects\park_proj_indu\park_proj\build\qr_code_scanner\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-9:67
 MERGED from [:printing] C:\Users\jayap\projects\park_proj_indu\park_proj\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:printing] C:\Users\jayap\projects\park_proj_indu\park_proj\build\printing\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:flutter_image_compress] C:\Users\jayap\projects\park_proj_indu\park_proj\build\flutter_image_compress\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-9:55
+MERGED from [:flutter_image_compress] C:\Users\jayap\projects\park_proj_indu\park_proj\build\flutter_image_compress\intermediates\merged_manifest\debug\AndroidManifest.xml:6:5-9:55
 MERGED from [androidx.appcompat:appcompat:1.4.2] C:\Users\jayap\.gradle\caches\transforms-3\36748e4882b95df12db5c5ea6f2b06ad\transformed\appcompat-1.4.2\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.4.2] C:\Users\jayap\.gradle\caches\transforms-3\36748e4882b95df12db5c5ea6f2b06ad\transformed\appcompat-1.4.2\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.6] C:\Users\jayap\.gradle\caches\transforms-3\d0e6567c482ae23998aaf36d625b0bbe\transformed\fragment-1.3.6\AndroidManifest.xml:20:5-22:41
@@ -158,6 +162,8 @@ MERGED from [androidx.core:core:1.8.0] C:\Users\jayap\.gradle\caches\transforms-
 MERGED from [androidx.core:core:1.8.0] C:\Users\jayap\.gradle\caches\transforms-3\121145fa3516925652bb7ce86a53ffd1\transformed\core-1.8.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\jayap\.gradle\caches\transforms-3\11e97971fabc820ff2d595758808fb55\transformed\exifinterface-1.3.3\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] C:\Users\jayap\.gradle\caches\transforms-3\11e97971fabc820ff2d595758808fb55\transformed\exifinterface-1.3.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.heifwriter:heifwriter:1.0.0] C:\Users\jayap\.gradle\caches\transforms-3\4e3cb4aab606eeb9d0d6c980838b5f26\transformed\heifwriter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.heifwriter:heifwriter:1.0.0] C:\Users\jayap\.gradle\caches\transforms-3\4e3cb4aab606eeb9d0d6c980838b5f26\transformed\heifwriter-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\jayap\.gradle\caches\transforms-3\febbde735dfcdc80300aa3a3d10823ff\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\jayap\.gradle\caches\transforms-3\febbde735dfcdc80300aa3a3d10823ff\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:21:5-23:41
 MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\jayap\.gradle\caches\transforms-3\dbedb9a6c5e43dbc29f497d410eaf520\transformed\jetified-startup-runtime-1.0.0\AndroidManifest.xml:21:5-23:41

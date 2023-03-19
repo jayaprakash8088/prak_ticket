@@ -350,19 +350,18 @@ clearValues(){
     await loadBytes();
     String value=await AppSharedPref().getVenueVal();
     final doc = pw.Document();
-    doc.addPage(pw.Page(
-        pageFormat: PdfPageFormat.a4,
-        build: (pw.Context context) {
-          return buildPrint(this,ctx,value);
-        }));
-    // doc.addPage(pw.MultiPage(
-    //     maxPages: 20,
-    //     orientation: pw.PageOrientation.natural,
+    // doc.addPage(pw.Page(
     //     pageFormat: PdfPageFormat.a4,
     //     build: (pw.Context context) {
-    //       return <pw.Widget>[buildPrint(this,ctx,value)];
-    //     }
-    // ));
+    //       return buildPrint(this,ctx,value);
+    //     }));
+    final font = await PdfGoogleFonts.nunitoExtraLight();
+    doc.addPage(
+      pw.MultiPage(
+        pageFormat: PdfPageFormat.a4,
+        build: (context) =>buildPrint(this,ctx,value,font),//here goes the widgets list
+      ),
+    );
     await Printing.layoutPdf(
         onLayout: (PdfPageFormat format) async => doc.save());
   }
