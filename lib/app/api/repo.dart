@@ -46,7 +46,11 @@ class Repository{
   Future saveEmpDetails(Map<String, dynamic> data,String token) async{
     try{
       dynamic response=await _apiClient.dioPostWithToken(submitDailyLoginDetails, data,token);
-      return true;
+     if(response!=null){
+       return true;
+     }else{
+       return false;
+     }
     }catch(e){debugPrint(e.toString());}
   }
 
