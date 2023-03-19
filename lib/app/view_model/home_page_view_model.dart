@@ -1,7 +1,10 @@
+import 'dart:convert';
 import 'dart:typed_data';
-import 'dart:ui' as ui;
+import 'dart:ui'as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:park_proj/app/models/save_ticket_info.dart';
 import 'package:park_proj/app/models/save_ticket_response_model.dart';
 import 'package:park_proj/app/utils/my_strings.dart';
@@ -13,6 +16,7 @@ import 'package:printing/printing.dart';
 import '../utils/print_doc.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:http/http.dart'as http;
 class HomePageViewModel with ChangeNotifier {
   final Repository _repository = Repository();
   TextEditingController mobileNumberController = TextEditingController();
@@ -343,6 +347,7 @@ clearValues(){
     }
   }
   dynamic printDoc(BuildContext ctx)async{
+    await loadBytes();
     String value=await AppSharedPref().getVenueVal();
     final doc = pw.Document();
     doc.addPage(pw.Page(
@@ -350,8 +355,33 @@ clearValues(){
         build: (pw.Context context) {
           return buildPrint(this,ctx,value);
         }));
+    // doc.addPage(pw.MultiPage(
+    //     maxPages: 20,
+    //     orientation: pw.PageOrientation.natural,
+    //     pageFormat: PdfPageFormat.a4,
+    //     build: (pw.Context context) {
+    //       return <pw.Widget>[buildPrint(this,ctx,value)];
+    //     }
+    // ));
     await Printing.layoutPdf(
         onLayout: (PdfPageFormat format) async => doc.save());
+  }
+
+
+  List<Uint8List> pngBytes=[];
+  Future<dynamic> loadBytes()async{
+    for(int i=0;i<ticketInfoResponseModel!.qrResponses!.length;i++){
+      var res=await http.get(Uri.parse(ticketInfoResponseModel!.qrResponses![i].qrCodePath!));
+      pngBytes.add(await testCompressList(res.bodyBytes));
+    }
+  }
+
+  Future<Uint8List> testCompressList(Uint8List list) async {
+    var result = await FlutterImageCompress.compressWithList(
+      list,
+      quality: 96,
+    );
+    return result;
   }
   @override
   void dispose() {

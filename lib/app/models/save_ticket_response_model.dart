@@ -22,21 +22,27 @@ class SaveTicketInfoResponseModel {
 }
 
 class QrResponse {
-    String? qr;
+    int? amount;
+    String? qrCodePath;
+    String? qrString;
     String? ticketName;
 
-    QrResponse({this.qr, this.ticketName});
+    QrResponse({this.amount, this.qrCodePath, this.qrString, this.ticketName});
 
     factory QrResponse.fromJson(Map<String, dynamic> json) {
         return QrResponse(
-            qr: json['qr'],
+            amount: json['amount'],
+            qrCodePath: json['qrCodePath'],
+            qrString: json['qrString'],
             ticketName: json['ticketName'],
         );
     }
 
     Map<String, dynamic> toJson() {
         final Map<String, dynamic> data = <String, dynamic>{};
-        data['qr'] = qr;
+        data['amount'] = amount;
+        data['qrCodePath'] = qrCodePath;
+        data['qrString'] = qrString;
         data['ticketName'] = ticketName;
         return data;
     }

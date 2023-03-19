@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:typed_data';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:park_proj/app/utils/app_config.dart';
@@ -18,16 +15,8 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
     child: pw.Column(
       crossAxisAlignment: pw.CrossAxisAlignment.center,
       children: [
-        // pw.Image(pw.MemoryImage(homePageViewModel.pngBytes!),
-        //     height: 200.0, width: 200.0),
-        // pw.SizedBox(
-        //   height: 10.0,
-        // ),
-        // pw.SizedBox(
-        //   height: 20.0,
-        // ),
         pw.SizedBox(
-          height: 10.0,
+          height: 20.0,
         ),
         pw.Text(
           bookingDetails,
@@ -50,11 +39,9 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
 
         // generating list of tickets
         pw.ListView.builder(
-            itemCount: 5,
+            itemCount: 2,
             direction: pw.Axis.vertical,
             itemBuilder: (ctx, index) {
-              var image=base64Decode(homePageViewModel
-                  .ticketInfoResponseModel!.qrResponses![0].qr!);
               return pw.Column(
                 mainAxisSize: pw.MainAxisSize.min,
                 children: [
@@ -64,7 +51,7 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
                     child: pw.Row(
                       children: [
                         pw.Image(
-                          pw.MemoryImage(image),
+                          pw.MemoryImage(homePageViewModel.pngBytes[0]),
                           width: MediaQuery.of(context).size.width * 0.25,
                           height: MediaQuery.of(context).size.height * 0.25,
                         ),
@@ -204,7 +191,7 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
                           width: 100.0,
                           child: pw.Text(
                               homePageViewModel
-                                  .saveTicketInfo!.ticketTypes![index].name!,
+                                  .saveTicketInfo!.ticketTypes![0].name!,
                               style: pw.TextStyle(
                                   color: PdfColors.black,
                                   fontSize: 18.0,
@@ -219,7 +206,7 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
                           ]),
                           child: pw.Center(
                               child: pw.Text(homePageViewModel
-                                  .saveTicketInfo!.ticketTypes![index].quantity!
+                                  .saveTicketInfo!.ticketTypes![0].quantity!
                                   .toString()))),
                       pw.Container(
                           decoration:
@@ -231,7 +218,7 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
                           ]),
                           child: pw.Center(
                               child: pw.Text(homePageViewModel
-                                  .saveTicketInfo!.ticketTypes![index].amount!
+                                  .saveTicketInfo!.ticketTypes![0].amount!
                                   .toString())))
                     ],
                   ),

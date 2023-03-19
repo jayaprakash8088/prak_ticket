@@ -1,18 +1,14 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:park_proj/app/utils/app_config.dart';
 import 'package:park_proj/app/utils/my_style.dart';
 import 'package:provider/provider.dart';
-
 import '../../utils/my_colors.dart';
 import '../../utils/my_strings.dart';
 import '../../view_model/home_page_view_model.dart';
 import '../common_widgets.dart';
 import '../home_page/home_screen.dart';
-import '../valid_ticket/ticket_list.dart';
 
 class TicketPage extends StatelessWidget {
   const TicketPage({Key? key}) : super(key: key);
@@ -42,6 +38,19 @@ class TicketPage extends StatelessWidget {
                 const SizedBox(
                   height: 10.0,
                 ),
+                // RepaintBoundary(
+                //   key: homePageViewModel.globalKey,
+                //   child: Image.network(
+                //     homePageViewModel
+                //         .ticketInfoResponseModel!
+                //         .qrResponses![0]
+                //         .qrCodePath!,
+                //     width:
+                //     MediaQuery.of(context).size.width * 0.25,
+                //     height:
+                //     MediaQuery.of(context).size.height * 0.25,
+                //   ),
+                // ),
                 ListView.builder(
                     scrollDirection: Axis.vertical,
                     physics: const ScrollPhysics(),
@@ -56,11 +65,11 @@ class TicketPage extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.9,
                             child: Row(
                               children: [
-                                Image.memory(
-                                  base64Decode(homePageViewModel
+                                Image.network(
+                                  homePageViewModel
                                       .ticketInfoResponseModel!
                                       .qrResponses![0]
-                                      .qr!),
+                                      .qrCodePath!,
                                   width:
                                   MediaQuery.of(context).size.width * 0.25,
                                   height:
@@ -120,16 +129,17 @@ class TicketPage extends StatelessWidget {
                                       right: 20.0,
                                       left: 20.0),
                                   label: Text('01')),
-                              const Chip(
+                               Chip(
                                   backgroundColor: whiteColor,
                                   shadowColor: chipShadow,
                                   elevation: 10.0,
-                                  padding: EdgeInsets.only(
+                                  padding: const EdgeInsets.only(
                                       top: 5.0,
                                       bottom: 5.0,
                                       right: 20.0,
                                       left: 20.0),
-                                  label: Text('20')),
+                                  label: Text(  homePageViewModel.ticketInfoResponseModel!
+                                      .qrResponses![0].amount!.toString())),
                             ],
                           ),
                         ],
@@ -140,9 +150,13 @@ class TicketPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () async {
+                    // await homePageViewModel.captureAndSharePng();
                     homePageViewModel.printDoc(context);
                   },
                   child: const MyButton(text: print),
+                ),
+                const SizedBox(
+                  height: 10.0,
                 ),
                 GestureDetector(
                   onTap: () async {
