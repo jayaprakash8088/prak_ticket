@@ -176,6 +176,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "image_picker_web",
+      "rootUri": "file:///C:/Users/jayap/AppData/Local/Pub/Cache/hosted/pub.dev/image_picker_web-3.0.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "intl",
       "rootUri": "file:///C:/Users/jayap/AppData/Local/Pub/Cache/hosted/pub.dev/intl-0.18.0",
       "packageUri": "lib/",
@@ -434,7 +440,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-03-19T11:19:26.249259Z",
+  "generated": "2023-03-19T12:05:41.147848Z",
   "generator": "pub",
   "generatorVersion": "2.19.4"
 }

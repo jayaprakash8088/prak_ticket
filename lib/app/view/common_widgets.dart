@@ -77,7 +77,7 @@ class LoginDetails extends StatelessWidget {
         SizedBox(
           width: fromCard
               ? MediaQuery.of(context).size.width * 0.3
-              : MediaQuery.of(context).size.width * 0.43,
+              : MediaQuery.of(context).size.width * 0.4,
           child: Text(
             title,
             softWrap: true,
@@ -88,7 +88,7 @@ class LoginDetails extends StatelessWidget {
         SizedBox(
           width: fromCard
               ? MediaQuery.of(context).size.width * 0.3
-              : MediaQuery.of(context).size.width * 0.43,
+              : MediaQuery.of(context).size.width * 0.4,
           child: Text(
             value,
             textAlign: TextAlign.end,

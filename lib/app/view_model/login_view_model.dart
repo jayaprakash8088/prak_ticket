@@ -1,8 +1,12 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'dart:async';
 import 'dart:convert';
-
+import 'dart:typed_data';
+import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:image_picker_web/image_picker_web.dart';
 import 'package:park_proj/app/api/repo.dart';
 import 'package:park_proj/app/api/urls.dart';
 import 'package:park_proj/app/models/login_response_model.dart';
@@ -23,7 +27,25 @@ class LoginViewModel with ChangeNotifier {
   final picker = ImagePicker();
   String? id;
   int? venueVal;
-
+  List<int>? selectedFile;
+  Uint8List? bytesData;
+  Uint8List? webImage;
+  String? path;
+    final ImagePicker webPicker = ImagePicker();
+    final ImagePickerWeb pickerWeb=ImagePickerWeb();
+    PickedFile? pickedFile;
+    dynamic image;
+    void uploadImage() async {
+      image = await webPicker.getImage(source: ImageSource.gallery);
+      if (image != null) {
+        pickedFile=image;
+        var f = await image.readAsBytes();
+        webImage = f;
+        path = image.path;
+        hasImage=true;
+        notifyListeners();
+      } else {}
+    }
   Future getImage(ImageSource source) async {
     final pickedFile = await picker.pickImage(source: source);
     if (pickedFile != null) {
@@ -88,8 +110,8 @@ class LoginViewModel with ChangeNotifier {
     }
   }
 
-  Future saveEmployeeDetails() async {
-    var img = await imageFile!.readAsBytes();
+  Future saveEmployeeDetails(bool kIsWeb) async {
+    var img = kIsWeb?webImage!:await imageFile!.readAsBytes();
     var base64 = base64Encode(img);
     var shiftVal=getShift();
     Map<String, dynamic> data = {

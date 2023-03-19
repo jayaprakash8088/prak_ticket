@@ -1,6 +1,8 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'dart:io';
+import 'dart:typed_data';
+import 'package:flutter/foundation.dart' show kIsWeb;
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -80,6 +82,7 @@ class LoginDetailUI extends StatelessWidget {
                     Consumer(builder: (_, a, child) {
                       return GestureDetector(
                         onTap: ()  {
+                          kIsWeb?viewModel.uploadImage():
                           viewModel.getImage(ImageSource.camera);
                         },
                         child: Container(
@@ -89,10 +92,11 @@ class LoginDetailUI extends StatelessWidget {
                               border:
                                   Border.all(color: blackColor, width: 2.0)),
                           child: viewModel.hasImage
-                              ? Image.file(
-                                  File(viewModel.imageFile!.path),
-                                  fit: BoxFit.cover,
-                                )
+                              ? !kIsWeb?
+                          Image.file(
+                            File(viewModel.imageFile!.path),
+                            fit: BoxFit.cover,
+                          ):Image.memory(viewModel.webImage!)
                               : Image.asset(cameraImage),
                         ),
                       );
@@ -106,7 +110,7 @@ class LoginDetailUI extends StatelessWidget {
                 onTap: () async {
                   if (viewModel.hasImage) {
                     AppConfig.dialog(context, pleaseWait);
-                    dynamic val = await viewModel.saveEmployeeDetails();
+                    dynamic val = await viewModel.saveEmployeeDetails(kIsWeb);
                     if (val != null && val) {
                       Navigator.pop(context);
                       viewModel.hasImage=false;
