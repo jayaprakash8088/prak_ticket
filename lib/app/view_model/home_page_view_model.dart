@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
 import 'dart:typed_data';
 import 'dart:ui'as ui;
@@ -350,18 +352,14 @@ clearValues(){
     await loadBytes();
     String value=await AppSharedPref().getVenueVal();
     final doc = pw.Document();
-    // doc.addPage(pw.Page(
-    //     pageFormat: PdfPageFormat.a4,
-    //     build: (pw.Context context) {
-    //       return buildPrint(this,ctx,value);
-    //     }));
-    final font = await PdfGoogleFonts.nunitoExtraLight();
+    final font = await PdfGoogleFonts.openSansRegular();
     doc.addPage(
       pw.MultiPage(
         pageFormat: PdfPageFormat.a4,
         build: (context) =>buildPrint(this,ctx,value,font),//here goes the widgets list
       ),
     );
+    Navigator.pop(ctx);
     await Printing.layoutPdf(
         onLayout: (PdfPageFormat format) async => doc.save());
   }

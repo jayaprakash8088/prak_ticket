@@ -10,27 +10,33 @@ import 'package:pdf/widgets.dart' as pw;
 import 'my_strings.dart';
 
 ////
-buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
-    String venueName, pw.Font font, ) {
+buildPrint(
+  HomePageViewModel homePageViewModel,
+  BuildContext context,
+  String venueName,
+  pw.Font font,
+) {
   List<pw.Widget> widgets = [];
-  final sizedBox10= pw.SizedBox(
+  final sizedBox10 = pw.SizedBox(
     height: 20.0,
   );
-  final textBookDetails= pw.Text(
-    bookingDetails,
-    style: pw.TextStyle(
-        color: PdfColors.black,
-        font: font,
-        fontSize: 16.0,
-        fontWeight: pw.FontWeight.normal),
+  final textBookDetails = pw.Center(
+    child: pw.Text(
+      bookingDetails,
+      style: pw.TextStyle(
+          color: PdfColors.black,
+          font: font,
+          fontSize: 16.0,
+          fontWeight: pw.FontWeight.normal),
+    )
   );
-  final textValid=  pw.Text(validForOne,
+  final textValid = pw.Center(child: pw.Text(validForOne,
       style: pw.TextStyle(
           color: PdfColors.grey,
           font: font,
           fontSize: 16.0,
-          fontWeight: pw.FontWeight.normal));
-  final list=pw.ListView.builder(
+          fontWeight: pw.FontWeight.normal)));
+  final list = pw.ListView.builder(
       itemCount: homePageViewModel.ticketInfoResponseModel!.qrResponses!.length,
       direction: pw.Axis.vertical,
       itemBuilder: (ctx, index) {
@@ -41,6 +47,8 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
               height: MediaQuery.of(context).size.height * 0.25,
               width: MediaQuery.of(context).size.width * 0.9,
               child: pw.Row(
+                crossAxisAlignment: pw.CrossAxisAlignment.start,
+                mainAxisAlignment: pw.MainAxisAlignment.spaceEvenly,
                 children: [
                   pw.Image(
                     pw.MemoryImage(homePageViewModel.pngBytes[index]),
@@ -54,25 +62,25 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
                           height: 40.0,
                           child: pw.Row(children: [
                             pw.SizedBox(
-                              width: MediaQuery.of(context).size.width *
-                                  0.42,
+                              width: MediaQuery.of(context).size.width * 0.42,
                               child: pw.Text(
                                 date,
                                 softWrap: true,
                                 textAlign: pw.TextAlign.left,
                                 style: pw.TextStyle(
-                                    color: PdfColors.grey,  font: font,
+                                    color: PdfColors.grey,
+                                    font: font,
                                     fontSize: 16.0,
                                     fontWeight: pw.FontWeight.normal),
                               ),
                             ),
                             pw.SizedBox(
-                              width: MediaQuery.of(context).size.width *
-                                  0.42,
+                              width: MediaQuery.of(context).size.width * 0.42,
                               child: pw.Text(
                                 AppConfig.date.format(AppConfig.now),
                                 textAlign: pw.TextAlign.right,
-                                style: pw.TextStyle(  font: font,
+                                style: pw.TextStyle(
+                                    font: font,
                                     color: PdfColors.black,
                                     fontSize: 16.0,
                                     fontWeight: pw.FontWeight.normal),
@@ -82,10 +90,12 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
                         ),
                         pw.SizedBox(
                           height: 40.0,
-                          child: pw.Row(children: [
+                          child: pw.Row(
+                              crossAxisAlignment: pw.CrossAxisAlignment.start,
+                              mainAxisAlignment: pw.MainAxisAlignment.spaceEvenly,
+                              children: [
                             pw.SizedBox(
-                              width: MediaQuery.of(context).size.width *
-                                  0.42,
+                              width: MediaQuery.of(context).size.width * 0.42,
                               child: pw.Text(
                                 checkIn,
                                 softWrap: true,
@@ -97,13 +107,13 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
                               ),
                             ),
                             pw.SizedBox(
-                              width: MediaQuery.of(context).size.width *
-                                  0.42,
+                              width: MediaQuery.of(context).size.width * 0.42,
                               child: pw.Text(
                                 AppConfig.date.format(AppConfig.now),
                                 textAlign: pw.TextAlign.right,
                                 style: pw.TextStyle(
-                                    color: PdfColors.black,  font: font,
+                                    color: PdfColors.black,
+                                    font: font,
                                     fontSize: 16.0,
                                     fontWeight: pw.FontWeight.normal),
                               ),
@@ -112,30 +122,29 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
                         ),
                         pw.SizedBox(
                           height: 40.0,
-                          child: pw.Row(children: [
+                          child: pw.Row( crossAxisAlignment: pw.CrossAxisAlignment.start,
+                              mainAxisAlignment: pw.MainAxisAlignment.spaceEvenly,children: [
                             pw.SizedBox(
-                              width: MediaQuery.of(context).size.width *
-                                  0.42,
+                              width: MediaQuery.of(context).size.width * 0.42,
                               child: pw.Text(
                                 paymentType,
                                 softWrap: true,
                                 textAlign: pw.TextAlign.left,
                                 style: pw.TextStyle(
-                                    color: PdfColors.grey,  font: font,
+                                    color: PdfColors.grey,
+                                    font: font,
                                     fontSize: 16.0,
                                     fontWeight: pw.FontWeight.normal),
                               ),
                             ),
                             pw.SizedBox(
-                              width: MediaQuery.of(context).size.width *
-                                  0.42,
+                              width: MediaQuery.of(context).size.width * 0.42,
                               child: pw.Text(
-                                !homePageViewModel.cashClicked
-                                    ? cash
-                                    : card,
+                                !homePageViewModel.cashClicked ? cash : card,
                                 textAlign: pw.TextAlign.right,
                                 style: pw.TextStyle(
-                                    color: PdfColors.black,  font: font,
+                                    color: PdfColors.black,
+                                    font: font,
                                     fontSize: 16.0,
                                     fontWeight: pw.FontWeight.normal),
                               ),
@@ -144,28 +153,29 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
                         ),
                         pw.SizedBox(
                           height: 40.0,
-                          child: pw.Row(children: [
+                          child: pw.Row( crossAxisAlignment: pw.CrossAxisAlignment.start,
+                              mainAxisAlignment: pw.MainAxisAlignment.spaceEvenly,children: [
                             pw.SizedBox(
-                              width: MediaQuery.of(context).size.width *
-                                  0.42,
+                              width: MediaQuery.of(context).size.width * 0.42,
                               child: pw.Text(
                                 venue,
                                 softWrap: true,
                                 textAlign: pw.TextAlign.left,
                                 style: pw.TextStyle(
-                                    color: PdfColors.grey,  font: font,
+                                    color: PdfColors.grey,
+                                    font: font,
                                     fontSize: 16.0,
                                     fontWeight: pw.FontWeight.normal),
                               ),
                             ),
                             pw.SizedBox(
-                              width: MediaQuery.of(context).size.width *
-                                  0.42,
+                              width: MediaQuery.of(context).size.width * 0.42,
                               child: pw.Text(
                                 venueName,
                                 textAlign: pw.TextAlign.right,
                                 style: pw.TextStyle(
-                                    color: PdfColors.black,  font: font,
+                                    color: PdfColors.black,
+                                    font: font,
                                     fontSize: 16.0,
                                     fontWeight: pw.FontWeight.normal),
                               ),
@@ -177,32 +187,31 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
               ),
             ),
             pw.Row(
+              crossAxisAlignment: pw.CrossAxisAlignment.start,
               mainAxisAlignment: pw.MainAxisAlignment.spaceEvenly,
               children: [
                 pw.SizedBox(
                     width: 100.0,
                     child: pw.Text(
-                        homePageViewModel
-                            .saveTicketInfo!.ticketTypes![index].name!,
+                        homePageViewModel.ticketInfoResponseModel!
+                            .qrResponses![index].ticketName!,
                         style: pw.TextStyle(
-                            color: PdfColors.black,  font: font,
+                            color: PdfColors.black,
+                            font: font,
                             fontSize: 18.0,
                             fontWeight: pw.FontWeight.normal))),
                 pw.Container(
                     decoration:
-                    const pw.BoxDecoration(boxShadow: <pw.BoxShadow>[
+                        const pw.BoxDecoration(boxShadow: <pw.BoxShadow>[
                       pw.BoxShadow(
                         color: PdfColors.black,
                         blurRadius: 15.0,
                       )
                     ]),
-                    child: pw.Center(
-                        child: pw.Text(homePageViewModel
-                            .saveTicketInfo!.ticketTypes![index].quantity!
-                            .toString()))),
+                    child: pw.Center(child: pw.Text('1'))),
                 pw.Container(
                     decoration:
-                    const pw.BoxDecoration(boxShadow: <pw.BoxShadow>[
+                        const pw.BoxDecoration(boxShadow: <pw.BoxShadow>[
                       pw.BoxShadow(
                         color: PdfColors.black,
                         blurRadius: 15.0,
@@ -210,14 +219,13 @@ buildPrint(HomePageViewModel homePageViewModel, BuildContext context,
                     ]),
                     child: pw.Center(
                         child: pw.Text(homePageViewModel
-                            .saveTicketInfo!.ticketTypes![index].amount!
+                            .ticketInfoResponseModel!.qrResponses![index].amount
                             .toString())))
               ],
             ),
           ],
         );
       });
-
 
   //////////////////////////////////////
   widgets.add(sizedBox10);

@@ -47,6 +47,7 @@ class LoginViewModel with ChangeNotifier {
         await AppSharedPref().saveToken(loginResponseModel!.token!);
         await AppSharedPref().saveId(employeeId.text.trim());
         await AppSharedPref().saveVenue(venueVal.toString());
+        await AppSharedPref().saveVenueVal(venueController.text.toString());
         await AppSharedPref().saveLogged(true);
         return true;
       } else {

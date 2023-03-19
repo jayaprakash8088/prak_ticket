@@ -38,23 +38,12 @@ class TicketPage extends StatelessWidget {
                 const SizedBox(
                   height: 10.0,
                 ),
-                // RepaintBoundary(
-                //   key: homePageViewModel.globalKey,
-                //   child: Image.network(
-                //     homePageViewModel
-                //         .ticketInfoResponseModel!
-                //         .qrResponses![0]
-                //         .qrCodePath!,
-                //     width:
-                //     MediaQuery.of(context).size.width * 0.25,
-                //     height:
-                //     MediaQuery.of(context).size.height * 0.25,
-                //   ),
-                // ),
                 ListView.builder(
                     scrollDirection: Axis.vertical,
                     physics: const ScrollPhysics(),
-                    itemCount: 5,
+                    itemCount: homePageViewModel
+                        .ticketInfoResponseModel!
+                        .qrResponses!.length,
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return Column(
@@ -116,7 +105,7 @@ class TicketPage extends StatelessWidget {
                                   width: 100.0,
                                   child: Text(
                                     homePageViewModel.ticketInfoResponseModel!
-                                        .qrResponses![0].ticketName!,
+                                        .qrResponses![index].ticketName!,
                                     style: MyStyle.getMediumBlackText(context),
                                   )),
                               const Chip(
@@ -139,7 +128,7 @@ class TicketPage extends StatelessWidget {
                                       right: 20.0,
                                       left: 20.0),
                                   label: Text(  homePageViewModel.ticketInfoResponseModel!
-                                      .qrResponses![0].amount!.toString())),
+                                      .qrResponses![index].amount!.toString())),
                             ],
                           ),
                         ],
@@ -150,7 +139,7 @@ class TicketPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () async {
-                    // await homePageViewModel.captureAndSharePng();
+                    AppConfig.dialog(context, pleaseWait);
                     homePageViewModel.printDoc(context);
                   },
                   child: const MyButton(text: print),
