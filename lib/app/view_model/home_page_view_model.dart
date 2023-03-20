@@ -1,8 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'dart:convert';
 import 'dart:typed_data';
-import 'dart:ui'as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
@@ -275,47 +273,47 @@ Future callSaveTicketApi()async{
 
   void setAdult() {
     if(adultVal!=0){
-      tickets.add(TicketType(amount: adultTotalVal,name: adult,quantity: adultVal));
+      tickets.add(TicketType(amount: adultTotalVal,name: adult,quantity: adultMulVal));
     }
   }
   void setChild() {
     if(childVal!=0){
-      tickets.add(TicketType(amount: childTotalVal,name: child,quantity: childVal));
+      tickets.add(TicketType(amount: childTotalVal,name: child,quantity: childMulVal));
     }
   }
   void setBike() {
     if(bikeVal!=0){
-      tickets.add(TicketType(amount: bikeTotalVal,name: bike,quantity: bikeVal));
+      tickets.add(TicketType(amount: bikeTotalVal,name: bike,quantity: twoWheelerMulVal));
     }
   }
   void setCar() {
     if(carVal!=0){
-      tickets.add(TicketType(amount: carTotalVal,name: car,quantity: carVal));
+      tickets.add(TicketType(amount: carTotalVal,name: car,quantity: fourWheelerMulVal));
     }
   }
   void setMiniBus() {
     if(miniBusVal!=0){
-      tickets.add(TicketType(amount: miniBusTotalVal,name: miniBus,quantity: miniBusVal));
+      tickets.add(TicketType(amount: miniBusTotalVal,name: miniBus,quantity: fourWheelerMulVal));
     }
   }
   void setLargeBus() {
     if(largeBusVal!=0){
-      tickets.add(TicketType(amount: largeBusTotalVal,name: largeBus,quantity: largeBusVal));
+      tickets.add(TicketType(amount: largeBusTotalVal,name: largeBus,quantity: fourWheelerMulVal));
     }
   }
   void setCamera() {
     if(cameraVal!=0){
-      tickets.add(TicketType(amount: cameraTotalVal,name: camera,quantity: cameraVal));
+      tickets.add(TicketType(amount: cameraTotalVal,name: camera,quantity: cameraMulVal));
     }
   }
   void setOther() {
     if(otherVal!=0){
-      tickets.add(TicketType(amount: otherTotalVal,name: other,quantity: otherVal));
+      tickets.add(TicketType(amount: otherTotalVal,name: other,quantity: othersMulVal));
     }
   }
   void setCycle() {
     if(cycleVal!=0){
-      tickets.add(TicketType(amount: cycleTotalVal,name: cycle,quantity: cycleVal));
+      tickets.add(TicketType(amount: cycleTotalVal,name: cycle,quantity: twoWheelerMulVal));
     }
   }
 clearValues(){
