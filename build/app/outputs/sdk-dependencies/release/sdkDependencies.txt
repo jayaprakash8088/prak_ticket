@@ -368,10 +368,10 @@ library {
   maven_library {
     groupId: "org.jetbrains.kotlin"
     artifactId: "kotlin-stdlib-jdk8"
-    version: "1.6.0"
+    version: "1.7.10"
   }
   digests {
-    sha256: "\253\005G\304\225\2252\024\245\362\262\201P\001ON\002\0236x\325+w\327cu\352#^D=\275"
+    sha256: "\212\257\335`\311OEL\222\345\006m&j^\325>\314c\307\217b;?\331\333V\376\244\003(s"
   }
   repo_index {
     value: 1
@@ -622,6 +622,31 @@ library {
 }
 library {
   maven_library {
+    groupId: "androidx.heifwriter"
+    artifactId: "heifwriter"
+    version: "1.0.0"
+  }
+  digests {
+    sha256: "\'\017\230}\005\230\314\0221\252\236\243\177Q^KR\317\345\304<\036\240\036\277\033\313@*Z8T"
+  }
+  repo_index {
+  }
+}
+library {
+  maven_library {
+    groupId: "commons-io"
+    artifactId: "commons-io"
+    version: "2.6"
+  }
+  digests {
+    sha256: "\370w\323\004f\n\302\241B\363\206[\255\374\227\035\354~\327<t|\177\215]/Q9\312se\023"
+  }
+  repo_index {
+    value: 1
+  }
+}
+library {
+  maven_library {
     groupId: "io.flutter"
     artifactId: "armeabi_v7a_release"
     version: "1.0.0-1837b5be5f0f1376a1ccf383950e83a80177fb4e"
@@ -661,7 +686,7 @@ library {
 }
 library {
   digests {
-    sha256: "\031g\207\337\246\270\340\323\356\253yz\3664\204M\327\207\243\366O[\275D\342\vF\362\025\034a\037"
+    sha256: "\320\323\331:\274f\244\211\310=\227\3522\006\313f\203O\017@(\355@\323c\312=\aU\206h\t"
   }
 }
 library_dependencies {
@@ -950,12 +975,16 @@ library_dependencies {
   library_index: 50
   library_dep_index: 2
 }
+library_dependencies {
+  library_index: 51
+  library_dep_index: 2
+}
 module_dependencies {
   module_name: "base"
   dependency_index: 31
-  dependency_index: 51
-  dependency_index: 52
   dependency_index: 53
+  dependency_index: 54
+  dependency_index: 55
   dependency_index: 0
   dependency_index: 2
   dependency_index: 36
@@ -964,7 +993,10 @@ module_dependencies {
   dependency_index: 11
   dependency_index: 50
   dependency_index: 32
-  dependency_index: 54
+  dependency_index: 30
+  dependency_index: 51
+  dependency_index: 52
+  dependency_index: 56
 }
 repositories {
   maven_repo {
@@ -979,6 +1011,16 @@ repositories {
 repositories {
   maven_repo {
     url: "https://storage.googleapis.com/download.flutter.io"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://dl.google.com/dl/android/maven2/"
+  }
+}
+repositories {
+  maven_repo {
+    url: "https://repo.maven.apache.org/maven2/"
   }
 }
 repositories {

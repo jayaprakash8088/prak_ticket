@@ -3,10 +3,8 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
-import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:image_picker_web/image_picker_web.dart';
 import 'package:park_proj/app/api/repo.dart';
 import 'package:park_proj/app/api/urls.dart';
 import 'package:park_proj/app/models/login_response_model.dart';
@@ -32,7 +30,6 @@ class LoginViewModel with ChangeNotifier {
   Uint8List? webImage;
   String? path;
     final ImagePicker webPicker = ImagePicker();
-    final ImagePickerWeb pickerWeb=ImagePickerWeb();
     PickedFile? pickedFile;
     dynamic image;
     void uploadImage() async {

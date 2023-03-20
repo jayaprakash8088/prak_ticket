@@ -29,8 +29,6 @@ class ApiClient {
       });
       if (response!=null&&response.statusCode == 200) {
         return response.body;
-      }else if(response!=null&&response.statusCode == 500){
-        dioPostWithToken(url, formData, token);
       }
       else {
         return null;

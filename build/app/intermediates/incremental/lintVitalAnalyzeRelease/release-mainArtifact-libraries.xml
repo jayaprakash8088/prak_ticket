@@ -82,6 +82,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="C:\Users\jayap\projects\park_proj_indu\park_proj\android@@:flutter_image_compress::release"
+      jars="C:\Users\jayap\projects\park_proj_indu\park_proj\build\flutter_image_compress\.transforms\7b4de2eacfc3d3aedfd80a9d263295ce\transformed\out\jars\classes.jar"
+      resolved="com.fluttercandies.flutter_image_compress:flutter_image_compress:unspecified"
+      folder="C:\Users\jayap\projects\park_proj_indu\park_proj\build\flutter_image_compress\.transforms\7b4de2eacfc3d3aedfd80a9d263295ce\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="io.flutter:flutter_embedding_release:1.0.0-1837b5be5f0f1376a1ccf383950e83a80177fb4e@jar"
       jars="C:\Users\jayap\.gradle\caches\modules-2\files-2.1\io.flutter\flutter_embedding_release\1.0.0-1837b5be5f0f1376a1ccf383950e83a80177fb4e\f73a182cf8c03bf2175c268e83b14e8032de7fe3\flutter_embedding_release-1.0.0-1837b5be5f0f1376a1ccf383950e83a80177fb4e.jar"
       resolved="io.flutter:flutter_embedding_release:1.0.0-1837b5be5f0f1376a1ccf383950e83a80177fb4e"/>
@@ -159,9 +172,9 @@
       jars="C:\Users\jayap\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-android\1.6.1\4e61fcdcc508cbaa37c4a284a50205d7c7767e37\kotlinx-coroutines-android-1.6.1.jar"
       resolved="org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0@jar"
-      jars="C:\Users\jayap\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\1.6.0\baf82c475e9372c25407f3d132439e4aa803b8b8\kotlin-stdlib-jdk8-1.6.0.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.0"/>
+      name="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10@jar"
+      jars="C:\Users\jayap\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\1.7.10\d70d7d2c56371f7aa18f32e984e3e2e998fe9081\kotlin-stdlib-jdk8-1.7.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"/>
   <library
       name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10@jar"
       jars="C:\Users\jayap\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.7.10\1ef73fee66f45d52c67e2aca12fd945dbe0659bf\kotlin-stdlib-jdk7-1.7.10.jar"
@@ -497,6 +510,19 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="androidx.heifwriter:heifwriter:1.0.0@aar"
+      jars="C:\Users\jayap\.gradle\caches\transforms-3\4e3cb4aab606eeb9d0d6c980838b5f26\transformed\heifwriter-1.0.0\jars\classes.jar"
+      resolved="androidx.heifwriter:heifwriter:1.0.0"
+      folder="C:\Users\jayap\.gradle\caches\transforms-3\4e3cb4aab606eeb9d0d6c980838b5f26\transformed\heifwriter-1.0.0"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="androidx.lifecycle:lifecycle-process:2.4.0@aar"
       jars="C:\Users\jayap\.gradle\caches\transforms-3\febbde735dfcdc80300aa3a3d10823ff\transformed\jetified-lifecycle-process-2.4.0\jars\classes.jar"
       resolved="androidx.lifecycle:lifecycle-process:2.4.0"
@@ -573,6 +599,10 @@
       name="com.google.zxing:core:3.5.0@jar"
       jars="C:\Users\jayap\.gradle\caches\modules-2\files-2.1\com.google.zxing\core\3.5.0\43cad2dc52f93c72e21ba4bd0a9244f04bb51fad\core-3.5.0.jar"
       resolved="com.google.zxing:core:3.5.0"/>
+  <library
+      name="commons-io:commons-io:2.6@jar"
+      jars="C:\Users\jayap\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.6\815893df5f31da2ece4040fe0a12fd44b577afaf\commons-io-2.6.jar"
+      resolved="commons-io:commons-io:2.6"/>
   <library
       name="com.google.guava:listenablefuture:1.0@jar"
       jars="C:\Users\jayap\.gradle\caches\modules-2\files-2.1\com.google.guava\listenablefuture\1.0\c949a840a6acbc5268d088e47b04177bf90b3cad\listenablefuture-1.0.jar"

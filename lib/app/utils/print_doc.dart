@@ -109,7 +109,7 @@ buildPrint(
                             pw.SizedBox(
                               width: MediaQuery.of(context).size.width * 0.42,
                               child: pw.Text(
-                                AppConfig.date.format(AppConfig.now),
+                                AppConfig.time.format(AppConfig.now),
                                 textAlign: pw.TextAlign.right,
                                 style: pw.TextStyle(
                                     color: PdfColors.black,
