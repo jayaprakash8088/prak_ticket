@@ -1,4 +1,7 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
+import 'package:park_proj/app/utils/app_config.dart';
 import 'package:park_proj/app/utils/my_assets.dart';
 import 'package:park_proj/app/utils/my_strings.dart';
 import 'package:park_proj/app/view/common_widgets.dart';
@@ -52,7 +55,9 @@ class PaymentSuccessScreen extends StatelessWidget {
               Image.asset(tick),
               const SizedBox(height: 50.0,),
               GestureDetector(
-                  onTap: (){
+                  onTap: ()async{
+                    AppConfig.dialog(context,pleaseWait+takeTime);
+                    await homePageViewModel.loadBytes();
                     dynamic newRoute=MaterialPageRoute(builder: (context)=>const TicketPage());
                     Navigator.pushAndRemoveUntil(context, newRoute, (route) => false);
                   },

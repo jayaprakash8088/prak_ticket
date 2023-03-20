@@ -63,6 +63,7 @@ const String scanner='Scanner';
 const String userNameKey='userName';
 const String passwordKey='password';
 const String pleaseWait='Please Wait';
+const String takeTime='. It may take sometime to generate ticket.';
 const String somethingWrong='Something went wrong';
 const String uploadImg='Please upload image';
 const String enterNumber='Please enter valid mobile number';

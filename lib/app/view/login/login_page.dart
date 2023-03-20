@@ -58,7 +58,6 @@ class LoginPage extends StatelessWidget {
                   if (viewModel.venueController.text != '' &&
                       viewModel.employeeId.text.isNotEmpty &&
                       viewModel.password.text.isNotEmpty) {
-                    if (viewModel.checkMail()) {
                       if (viewModel.validatePassword()) {
                         AppConfig.dialog(context, pleaseWait);
                         var value = await viewModel.callLoginApi();
@@ -75,9 +74,6 @@ class LoginPage extends StatelessWidget {
                       } else {
                         AppConfig.showToast('Please enter valid password');
                       }
-                    } else {
-                      AppConfig.showToast('Please enter valid emp id');
-                    }
                   } else {
                     AppConfig.showToast('Please fill all  fields');
                   }

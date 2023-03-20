@@ -47,6 +47,7 @@ class HomePageViewModel with ChangeNotifier {
   int fourWheelerMulVal=0;
   int cameraMulVal=0;
   int othersMulVal=0;
+  var venueValue='';
   void changeCashCard() {
     cashClicked = !cashClicked;
     notifyListeners();
@@ -182,6 +183,7 @@ class HomePageViewModel with ChangeNotifier {
   Future getTicketDetail() async {
     hasValue =false;
     var token=await AppSharedPref().getToken();
+   venueValue=await AppSharedPref().getVenueVal();
     ticketInfo=[];
     try {
       dynamic response = await _repository.getTicketDetails(getTicketInfo,token);
@@ -226,12 +228,13 @@ class HomePageViewModel with ChangeNotifier {
   List<TicketType> tickets=[];
   String ticketId='';
   Future saveTicket()async{
+    ticketInfoResponseModel=SaveTicketInfoResponseModel();
     tickets=[];
-    var venueValue=await AppSharedPref().getVenue();
+   var venue=await AppSharedPref().getVenue();
     var employeeId=await AppSharedPref().getId();
     try{
       await setTickets();
-      saveTicketInfo=SaveTicketInfo(venueId: venueValue,
+      saveTicketInfo=SaveTicketInfo(venueId: venue,
       empid:employeeId,mobileNumber:mobileNumberController.text.trim(),
       paymentStatus:success,
       paymentType: cashClicked?cash:card,
@@ -259,61 +262,61 @@ Future callSaveTicketApi()async{
 
 }
   setTickets() async{
-   setAdult();
-   setChild();
-   setCycle();
-   setBike();
-   setCar();
-   setMiniBus();
-   setLargeBus();
-   setCamera();
-   setOther();
+  await setAdult();
+  await setChild();
+  await setCycle();
+  await setBike();
+  await setCar();
+  await setMiniBus();
+  await setLargeBus();
+  await setCamera();
+  await setOther();
 
   }
 
-  void setAdult() {
+   setAdult() {
     if(adultVal!=0){
-      tickets.add(TicketType(amount: adultTotalVal,name: adult,quantity: adultMulVal));
+      tickets.add(TicketType(amount: adultMulVal,name: adult,quantity: adultVal));
     }
   }
-  void setChild() {
+   setChild() {
     if(childVal!=0){
-      tickets.add(TicketType(amount: childTotalVal,name: child,quantity: childMulVal));
+      tickets.add(TicketType(amount:childMulVal ,name: child,quantity: childVal));
     }
   }
-  void setBike() {
+   setBike() {
     if(bikeVal!=0){
-      tickets.add(TicketType(amount: bikeTotalVal,name: bike,quantity: twoWheelerMulVal));
+      tickets.add(TicketType(amount:twoWheelerMulVal ,name: bike,quantity:bikeVal ));
     }
   }
-  void setCar() {
+   setCar() {
     if(carVal!=0){
-      tickets.add(TicketType(amount: carTotalVal,name: car,quantity: fourWheelerMulVal));
+      tickets.add(TicketType(amount:fourWheelerMulVal ,name: car,quantity:carVal ));
     }
   }
-  void setMiniBus() {
+   setMiniBus() {
     if(miniBusVal!=0){
-      tickets.add(TicketType(amount: miniBusTotalVal,name: miniBus,quantity: fourWheelerMulVal));
+      tickets.add(TicketType(amount:fourWheelerMulVal ,name: miniBus,quantity:miniBusVal ));
     }
   }
-  void setLargeBus() {
+   setLargeBus() {
     if(largeBusVal!=0){
-      tickets.add(TicketType(amount: largeBusTotalVal,name: largeBus,quantity: fourWheelerMulVal));
+      tickets.add(TicketType(amount: fourWheelerMulVal,name: largeBus,quantity:largeBusVal ));
     }
   }
-  void setCamera() {
+   setCamera() {
     if(cameraVal!=0){
-      tickets.add(TicketType(amount: cameraTotalVal,name: camera,quantity: cameraMulVal));
+      tickets.add(TicketType(amount:cameraMulVal ,name: camera,quantity:cameraVal ));
     }
   }
-  void setOther() {
+   setOther() {
     if(otherVal!=0){
-      tickets.add(TicketType(amount: otherTotalVal,name: other,quantity: othersMulVal));
+      tickets.add(TicketType(amount:othersMulVal ,name: other,quantity:otherVal ));
     }
   }
-  void setCycle() {
+   setCycle() {
     if(cycleVal!=0){
-      tickets.add(TicketType(amount: cycleTotalVal,name: cycle,quantity: twoWheelerMulVal));
+      tickets.add(TicketType(amount:twoWheelerMulVal ,name: cycle,quantity:cycleVal ));
     }
   }
 clearValues(){
@@ -347,14 +350,13 @@ clearValues(){
     }
   }
   dynamic printDoc(BuildContext ctx)async{
-    await loadBytes();
     String value=await AppSharedPref().getVenueVal();
     final doc = pw.Document();
     final font = await PdfGoogleFonts.openSansRegular();
     doc.addPage(
       pw.MultiPage(
         pageFormat: PdfPageFormat.a4,
-        build: (context) =>buildPrint(this,ctx,value,font),//here goes the widgets list
+        build: (context) =>Print.buildPrint(this,ctx,value,font),//here goes the widgets list
       ),
     );
     Navigator.pop(ctx);
@@ -365,6 +367,7 @@ clearValues(){
 
   List<Uint8List> pngBytes=[];
   Future<dynamic> loadBytes()async{
+    pngBytes=[];
     for(int i=0;i<ticketInfoResponseModel!.qrResponses!.length;i++){
       var res=await http.get(Uri.parse(ticketInfoResponseModel!.qrResponses![i].qrCodePath!));
       pngBytes.add(await testCompressList(res.bodyBytes));

@@ -1,9 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'dart:io';
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart' show kIsWeb;
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:park_proj/app/utils/app_config.dart';
@@ -126,6 +124,7 @@ class LoginDetailUI extends StatelessWidget {
                       await Navigator.pushAndRemoveUntil(
                           context, value ? scan : homeScreen, (route) => false);
                     } else {
+                      Navigator.pop(context);
                       AppConfig.showToast(somethingWrong);
                     }
                   } else {

@@ -140,18 +140,8 @@ class LoginViewModel with ChangeNotifier {
         for (int i = 0; i < response.length; i++) {
           venueList.add(VenueResponseModel(
               venueId: response[i]['venueId'],
-              venueName: response[i]['venueName']));
+              venueName: response[i]['venueName']??12000));
         }
-        venueList
-            .add(VenueResponseModel(venueId: 12001, venueName: 'VMRDA PARK2'));
-        venueList
-            .add(VenueResponseModel(venueId: 12002, venueName: 'VMRDA PARK3'));
-        venueList
-            .add(VenueResponseModel(venueId: 12003, venueName: 'VMRDA PARK4'));
-        venueList
-            .add(VenueResponseModel(venueId: 12004, venueName: 'GOVT PARK1'));
-        venueList
-            .add(VenueResponseModel(venueId: 12005, venueName: 'GOVT PARK2'));
       } else {
         venueList = [];
       }

@@ -5,7 +5,7 @@ import 'package:park_proj/app/utils/my_colors.dart';
 import 'package:intl/intl.dart';
 import 'package:park_proj/app/utils/my_strings.dart';
 class AppConfig {
-  static var date=DateFormat('dd-m-yyyy');
+  static var date=DateFormat('dd-M-yyyy');
   static var time=DateFormat('h:mm a');
   static var now=DateTime.now();
   static void dialog(BuildContext context, String text) {

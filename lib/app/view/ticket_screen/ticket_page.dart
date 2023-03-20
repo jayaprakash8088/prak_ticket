@@ -54,11 +54,9 @@ class TicketPage extends StatelessWidget {
                             width: MediaQuery.of(context).size.width * 0.9,
                             child: Row(
                               children: [
-                                Image.network(
+                                Image.memory(
                                   homePageViewModel
-                                      .ticketInfoResponseModel!
-                                      .qrResponses![0]
-                                      .qrCodePath!,
+                                      .pngBytes[index],
                                   width:
                                   MediaQuery.of(context).size.width * 0.25,
                                   height:
@@ -91,7 +89,7 @@ class TicketPage extends StatelessWidget {
                                     LoginDetails(
                                         title: venue,
                                         value: homePageViewModel
-                                            .saveTicketInfo!.venueId!,
+                                            .venueValue,
                                         fromCard: true),
                                   ],
                                 )
