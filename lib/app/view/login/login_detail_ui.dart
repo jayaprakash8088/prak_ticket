@@ -37,7 +37,7 @@ class LoginDetailUI extends StatelessWidget {
             ),
             LoginDetails(
                 title: venue,
-                value: viewModel.empDetailResponseModel!.venue!,
+                value: viewModel.venueController.text,
                 fromCard: false),
             const SizedBox(
               height: 10.0,

@@ -63,6 +63,9 @@ class LoginViewModel with ChangeNotifier {
     try {
       loginResponseModel = await _repository.loginUser(formData);
       if (loginResponseModel != null) {
+        venueController.text='';
+        employeeId.text='';
+        password.text='';
         await AppSharedPref().saveToken(loginResponseModel!.token!);
         await AppSharedPref().saveId(employeeId.text.trim());
         await AppSharedPref().saveVenue(venueVal.toString());
@@ -140,7 +143,7 @@ class LoginViewModel with ChangeNotifier {
         for (int i = 0; i < response.length; i++) {
           venueList.add(VenueResponseModel(
               venueId: response[i]['venueId'],
-              venueName: response[i]['venueName']??12000));
+              venueName: response[i]['venueName']));
         }
       } else {
         venueList = [];
