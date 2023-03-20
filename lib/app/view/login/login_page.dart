@@ -65,6 +65,9 @@ class LoginPage extends StatelessWidget {
                           Navigator.pop(context);
                           dynamic newRoute = MaterialPageRoute(
                               builder: (context) => const LoginDetailPage());
+                          viewModel.venueController.text='';
+                          viewModel.employeeId.text='';
+                          viewModel.password.text='';
                           Navigator.pushAndRemoveUntil(
                               context, newRoute, (route) => false);
                         } else {

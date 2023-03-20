@@ -63,9 +63,6 @@ class LoginViewModel with ChangeNotifier {
     try {
       loginResponseModel = await _repository.loginUser(formData);
       if (loginResponseModel != null) {
-        venueController.text='';
-        employeeId.text='';
-        password.text='';
         await AppSharedPref().saveToken(loginResponseModel!.token!);
         await AppSharedPref().saveId(employeeId.text.trim());
         await AppSharedPref().saveVenue(venueVal.toString());
