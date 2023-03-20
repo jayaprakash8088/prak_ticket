@@ -183,7 +183,6 @@ class HomePageViewModel with ChangeNotifier {
   Future getTicketDetail() async {
     hasValue =false;
     var token=await AppSharedPref().getToken();
-   venueValue=await AppSharedPref().getVenueVal();
     ticketInfo=[];
     try {
       dynamic response = await _repository.getTicketDetails(getTicketInfo,token);
@@ -232,6 +231,7 @@ class HomePageViewModel with ChangeNotifier {
     tickets=[];
    var venue=await AppSharedPref().getVenue();
     var employeeId=await AppSharedPref().getId();
+    venueValue=await AppSharedPref().getVenueVal();
     try{
       await setTickets();
       saveTicketInfo=SaveTicketInfo(venueId: venue,
@@ -350,13 +350,12 @@ clearValues(){
     }
   }
   dynamic printDoc(BuildContext ctx)async{
-    String value=await AppSharedPref().getVenueVal();
     final doc = pw.Document();
     final font = await PdfGoogleFonts.openSansRegular();
     doc.addPage(
       pw.MultiPage(
         pageFormat: PdfPageFormat.a4,
-        build: (context) =>Print.buildPrint(this,ctx,value,font),//here goes the widgets list
+        build: (context) =>Print.buildPrint(this,ctx,venueValue,font),//here goes the widgets list
       ),
     );
     Navigator.pop(ctx);
